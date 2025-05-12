@@ -1,7 +1,5 @@
 # qubership-pipelines-modules-ops
 
-[[_TOC_]]
-
 ## Description
 
 This Python package provides functions to handle data for Qubership pipelines/modules.
