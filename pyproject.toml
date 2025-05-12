@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "qubership_pipelines_modules_ops"
+version = "0.0.1"
+description = "Qubership Pipelines Modules Operations library"
+readme = "README.md"
+packages = [{from = "src", include = "qubership_pipelines_modules_ops"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyYAML = "^6.0"
+click = "^8.1"
+graphlib_backport = {version="^1.1", python="<3.9"}
+
+# [tool.poetry.scripts]
+# qubership_pipelines_modules_ops_cli = "qubership_pipelines_modules_ops.__main__:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
