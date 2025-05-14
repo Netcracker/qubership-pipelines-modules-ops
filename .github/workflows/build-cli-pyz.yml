@@ -1,0 +1,36 @@
+name: Build Zipapp
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Build & Test
+        run: |
+          python --version
+          python -m pip install --upgrade pip
+          python -m pip install --user pipx
+          pipx install poetry
+          
+          python -m venv .venv
+          poetry build
+          pip install -q --target pack --no-compile --upgrade dist/*.whl
+          python -m zipapp pack -o ./qubership_pipelines_modules_ops.pyz --main=qubership_pipelines_modules_ops.__main__:cli --compress
+
+      - name: Upload zipapp
+        uses: actions/upload-artifact@v4
+        with:
+          name: qubership_pipelines_modules_ops.pyz
+          path: qubership_pipelines_modules_ops.pyz
