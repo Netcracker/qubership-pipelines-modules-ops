@@ -119,7 +119,7 @@ jobs:
       contents: write
       pull-requests: write
     needs: [get-current-version]
-    uses: Netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@main
+    uses: myborislavrorg/qubership-workflow-hub/.github/workflows/release-drafter.yml@main
     with:
       version: ${{ needs.get-current-version.outputs.current_version }}
       publish: false
