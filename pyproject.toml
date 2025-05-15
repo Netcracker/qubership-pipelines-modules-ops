@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "qubership-pipelines-modules-ops"
-version = "0.0.1"
+version = "0.0.3"
 description = "Qubership Pipelines Modules Operations library"
 authors = ["Qubership"]
 readme = "README.md"
