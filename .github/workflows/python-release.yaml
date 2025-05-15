@@ -51,31 +51,16 @@ jobs:
   check-tag:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Check if tag exists
-        if: ${{ inputs.version != '' }}
         id: check_tag
-        uses: netcracker/qubership-workflow-hub/actions/tag-checker@main
+        uses: netcracker/qubership-workflow-hub/actions/tag-action@1.0.1
         with:
-          tag: 'v${{ github.event.inputs.version }}'
+          tag-name: 'v${{ inputs.version }}'
+          ref: ${{ github.ref }}
+          create-tag: false
+          check-tag: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Output result
-        if: ${{ inputs.version != '' }}
-        run: |
-          echo "Tag exists: ${{ steps.check_tag.outputs.exists }}"
-          echo "Tag name: ${{ steps.check_tag.outputs.tag_name }}"
-
-      - name: Fail if tag exists
-        if: inputs.version != '' && steps.check_tag.outputs.exists == 'true'
-        run: |
-          echo "Tag already exists: ${{ steps.check_tag.outputs.tag_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "Tag already exists: ${{ steps.check_tag.outputs.tag_name }}"
-          exit 1
-
   publish:
     permissions:
       contents: write
@@ -120,7 +105,7 @@ jobs:
       contents: write
       pull-requests: write
     needs: [get-current-version]
-    uses: netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@main
+    uses: Netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@main
     with:
       version: ${{ needs.get-current-version.outputs.current_version }}
       publish: false
