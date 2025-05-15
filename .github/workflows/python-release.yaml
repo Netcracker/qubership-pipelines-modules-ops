@@ -1,7 +1,7 @@
 ---
 
 name: Python Release
-run-name: "${{ github.env.repository.name }} release ${{ inputs.version }}"
+run-name: "${{ github.event.repository.name }} release ${{ inputs.version }}"
 on:
   workflow_dispatch:
     inputs:
