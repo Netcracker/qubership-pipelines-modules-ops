@@ -80,7 +80,7 @@ jobs:
     permissions:
       contents: write
     needs: [check-tag]
-    uses: netcracker/qubership-workflow-hub/.github/workflows/python-publish.yml@main
+    uses: myborislavrorg/qubership-workflow-hub/.github/workflows/python-publish.yml@main
     with:
       version: ${{ inputs.version }}
       poetry_version_options: ${{ inputs.poetry_version_options }}
