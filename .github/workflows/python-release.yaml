@@ -1,7 +1,7 @@
 ---
 
 name: Python Release
-
+run-name: "Python release ${{ inputs.version }}"
 on:
   workflow_dispatch:
     inputs:
