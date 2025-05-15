@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Check if tag exists
         id: check_tag
-        uses: netcracker/qubership-workflow-hub/actions/tag-action@1.0.1
+        uses: netcracker/qubership-workflow-hub/actions/tag-action@v1.0.1
         with:
           tag-name: 'v${{ inputs.version }}'
           ref: ${{ github.ref }}
@@ -105,7 +105,7 @@ jobs:
       contents: write
       pull-requests: write
     needs: [get-current-version]
-    uses: Netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@main
+    uses: Netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@v1.0.1
     with:
       version: ${{ needs.get-current-version.outputs.current_version }}
       publish: false
