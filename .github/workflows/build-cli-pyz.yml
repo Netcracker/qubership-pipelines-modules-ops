@@ -20,10 +20,7 @@ jobs:
       - name: Build & Test
         run: |
           python --version
-          python -m pip install --upgrade pip
-          python -m pip install --user pipx
-          pipx install poetry
-          
+          pip install poetry
           python -m venv .venv
           poetry build
           pip install -q --target pack --no-compile --upgrade dist/*.whl
