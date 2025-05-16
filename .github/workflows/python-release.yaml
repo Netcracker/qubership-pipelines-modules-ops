@@ -50,9 +50,9 @@ jobs:
 
   check-tag:
     runs-on: ubuntu-latest
-    if: ${{ inputs.version != '' }}
     steps:
       - name: Check if tag exists
+        if: ${{ inputs.version != '' }}
         id: check_tag
         uses: netcracker/qubership-workflow-hub/actions/tag-action@v1.0.1
         with:
