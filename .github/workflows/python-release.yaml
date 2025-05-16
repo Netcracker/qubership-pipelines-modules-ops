@@ -109,4 +109,4 @@ jobs:
     uses: Netcracker/qubership-workflow-hub/.github/workflows/release-drafter.yml@v1.0.1
     with:
       version: ${{ needs.get-current-version.outputs.current_version }}
-      publish: false
+      publish: true
