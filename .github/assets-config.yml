@@ -1,0 +1,3 @@
+files:
+  - source: "qubership_pipelines_modules_ops.pyz"
+    outputName: "qubership_pipelines_modules_ops.pyz"
