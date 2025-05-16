@@ -50,6 +50,7 @@ jobs:
 
   check-tag:
     runs-on: ubuntu-latest
+    if: ${{ inputs.version != '' }}
     steps:
       - name: Check if tag exists
         id: check_tag
