@@ -12,7 +12,7 @@ python = "^3.8"
 PyYAML = "^6.0"
 click = "^8.1"
 graphlib_backport = {version="^1.1", python="<3.9"}
-requests = "2.32.3"
+requests = "^2.32.3"
 
 # [tool.poetry.scripts]
 # qubership_pipelines_modules_ops_cli = "qubership_pipelines_modules_ops.__main__:cli"
