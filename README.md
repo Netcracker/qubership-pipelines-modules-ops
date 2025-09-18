@@ -1,3 +1,8 @@
+[![PyPI](https://img.shields.io/pypi/v/qubership-pipelines-modules-ops)](https://pypi.org/project/qubership-pipelines-modules-ops/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/qubership-pipelines-modules-ops)
+![Build](https://github.com/Netcracker/qubership-pipelines-modules-ops/actions/workflows/python-release.yaml/badge.svg)
+![Repo Size](https://img.shields.io/github/repo-size/Netcracker/qubership-pipelines-modules-ops)
+
 # qubership-pipelines-modules-ops
 
 ## Description
