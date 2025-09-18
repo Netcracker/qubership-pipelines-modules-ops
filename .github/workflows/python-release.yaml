@@ -100,8 +100,8 @@ jobs:
 
       - name: "Commit changes"
         run: |
-          git config --global user.email "tech@qubership.org"
-          git config --global user.name "tech"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions[bot]"
           git add .
           git commit -m "Update version to ${{ steps.publish.outputs.release-version }} for release"
           git push -u origin ${{ github.ref }}
